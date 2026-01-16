@@ -1,1 +1,346 @@
-jennyz lol
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .product-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #1a1a1a;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sold-out-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-12deg);
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #000;
+            padding: 0.5rem 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.2rem;
+            border: 3px solid #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            image-rendering: pixelated;
+        }
+
+        .sale-banner {
+            position: absolute;
+            top: 1rem;
+            right: -0.5rem;
+            background-color: #dc2626;
+            color: #fff;
+            padding: 0.3rem 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            transform: rotate(-8deg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-info {
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .price-original {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .price-sale {
+            color: #dc2626;
+            font-weight: 500;
+        }
+
+        .price-regular {
+            color: #999;
+        }
+
+        footer {
+            border-top: 1px solid #333;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VINTAGE COLLECTION</h1>
+        <nav>
+            <ul>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#exhibitions">Exhibitions</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#vintage">Vintage Store</a></li>
+                <li><a href="#press">Press</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=533&fit=crop" alt="Vintage Silk Dress">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Vintage Silk Dress 1960s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$245</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - On Sale -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="sale-banner">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=533&fit=crop" alt="Wool Coat">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Wool Coat 1970s</div>
+                    <div class="product-price">
+                        <span class="price-original">$380</span>
+                        <span class="price-sale">$285</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - Sold Out -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1544957992-20514f595d6f?w=400&h=533&fit=crop" alt="Leather Handbag">
+                    <div class="sold-out-overlay">SOLD OUT</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Leather Handbag 1980s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$195</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&h=533&fit=crop" alt="Evening Gown">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Evening Gown 1950s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$420</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 - On Sale -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="sale-banner">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=400&h=533&fit=crop" alt="Tweed Blazer">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Tweed Blazer 1970s</div>
+                    <div class="product-price">
+                        <span class="price-original">$210</span>
+                        <span class="price-sale">$158</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&h=533&fit=crop" alt="Silk Scarf">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Silk Scarf Collection 1960s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$85</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 - Sold Out -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=533&fit=crop" alt="Designer Heels">
+                    <div class="sold-out-overlay">SOLD OUT</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Designer Heels 1980s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$165</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=533&fit=crop" alt="Vintage Sunglasses">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Vintage Sunglasses 1970s</div>
+                    <div class="product-price">
+                        <span class="price-regular">$125</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 9 - On Sale -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="sale-banner">SALE</div>
+                    <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=533&fit=crop" alt="Denim Jacket">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Denim Jacket 1980s</div>
+                    <div class="product-price">
+                        <span class="price-original">$145</span>
+                        <span class="price-sale">$109</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vintage Collection. All rights reserved.</p>
+    </footer>
+</body>
+</html>
